@@ -1,5 +1,5 @@
 import random
-
+import math
 # random.seed(time.time())
 class Mat:
     def __init__(self,rows,cols,data=[]):
@@ -23,6 +23,24 @@ class Mat:
             for j in range(self.cols):
                 self.data[self.returnIndex(i,j)] += mat.data[mat.returnIndex(i,j)]
     
+    def matInc(self, val):
+        for i in  range(self.rows):
+            for j in range(self.cols):
+                self.data[self.returnIndex(i,j)] += val
+    
+    def matDec(self, val):
+        for i in  range(self.rows):
+            for j in range(self.cols):
+                self.data[self.returnIndex(i,j)] -= val
+    
+    def matRed(self, val):
+        for i in  range(self.rows):
+            for j in range(self.cols):
+                self.data[self.returnIndex(i,j)] /= val
+
+    def sigmoidi(self,val):
+        return (1.0/(1.0 + math.exp(-val)))
+
     def matSub(self, mat):
         assert(self.cols == mat.cols)
         # assert(self.rows == mat.rows)
@@ -40,13 +58,21 @@ class Mat:
         for i in  range(self.rows):
             for j in range(self.cols):
                 tot += self.data[self.returnIndex(i,j)] * self.data[self.returnIndex(i,j)]
-        return tot 
+        return tot
+    
+    def matSig(self):
+        for i in  range(self.rows): 
+            for j in range(self.cols):
+                self.data[self.returnIndex(i,j)] = self.sigmoidi(self.data[self.returnIndex(i,j)])
     
     def matPrint(self):
+        print("[")
         for i in  range(self.rows):
             for j in range(self.cols):
-                print("{:.4f}".format(self.data[self.returnIndex(i,j)]), end="  ")
+                print("{:.2f}".format(self.data[self.returnIndex(i,j)]), end="  ")
             print()
+        print("]")
+
     
     def matDot(self,mat):
         dot = Mat(self.rows,mat.cols)
