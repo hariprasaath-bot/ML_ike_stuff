@@ -19,8 +19,8 @@ def cost(w_mat,b_mat):
 
 def main():
     w_mat = Mat(1,1)
-    w_mat.matRandom(1,100,time.time())
-    b_mat = Mat(input.getCols(),1,[0.01, 0.01, 0.01, 0.01, 0.01, 0.01])
+    w_mat.matRandom(1,10,time.time())
+    b_mat = Mat(input.getCols(),1,[0.01, 0.001, 0.01, 0.01, 0.01, 0.01])
     ep = Mat(1,1,[0.001])
     rate = Mat(1,1,[0.01])
     print("ïnitial ",end=" ")
