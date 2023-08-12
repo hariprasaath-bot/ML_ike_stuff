@@ -1,6 +1,9 @@
 import random
 import math
-# random.seed(time.time())
+
+# Gurunathar : https://www.youtube.com/playlist?list=PLpM-Dvs8t0VZPZKggcql-MmjaBdZKeDMw
+
+# Matrices mathematics
 class Mat:
     def __init__(self,rows,cols,data=[]):
          self.rows = rows

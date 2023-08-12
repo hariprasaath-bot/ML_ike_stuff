@@ -1,5 +1,6 @@
 This is basic ML project
 
+Gurunathar : https://www.youtube.com/playlist?list=PLpM-Dvs8t0VZPZKggcql-MmjaBdZKeDMw
 ML framework --MATRICES
 DATABASES
 
